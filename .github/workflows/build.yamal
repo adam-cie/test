@@ -1,0 +1,7 @@
+name: template
+on: push
+jobs: 
+    build:
+        runs-on: windows-latest
+        steps: 
+            -run: node main.py
