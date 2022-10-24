@@ -1,2 +1,2 @@
 # test
-![badge](https://github.com/<OWNER>/<REPOSITORY>/actions/workflows/<WORKFLOW_FILE>/badge.svg)
+![badge](https://github.com/dabrze/topsis-msd-improvement-actions/actions/workflows/build.yml/badge.svg)
