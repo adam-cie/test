@@ -2,11 +2,12 @@ name: template
 on: push
 jobs:
   build:
-     runs-on: windows-latest
-     steps:
-      - uses: conda-incubator/setup-miniconda@v2
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v1
+      - uses: BSFishy/pip-action@v1
         with:
-          activate-environment: anaconda-client-env
-          environment-file: environment.yml
-          auto-activate-base: true
-      - run: test
+          package: |
+            numpy
+      - run: main
