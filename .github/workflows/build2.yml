@@ -2,7 +2,7 @@ name: template
 on: push
 jobs:
   build:
-    runs-on: windows-latest
+     runs-on: windows-latest
      steps:
       - uses: conda-incubator/setup-miniconda@v2
         with:
