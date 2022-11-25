@@ -1,2 +1,6 @@
 pytest
 numpy
+dataclasses
+pandas
+scikit-learn
+matplotlib
