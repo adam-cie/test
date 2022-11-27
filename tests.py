@@ -11,4 +11,4 @@ def test_mytest():
 
     TopsisTransformer = MSDTransformer()
     with pytest.raises(Exception):
-        TopsisTransformer.transform()
+        TopsisTransformer.fit(1)
