@@ -22,4 +22,5 @@ jobs:
       - name: execute py script # run main.py
         env:
           SOME_SECRET: ${{ secrets.SOME_SECRET }}
-        run: python test.py
+        run: |
+          pytest -q tests.py
