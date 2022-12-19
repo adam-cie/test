@@ -9,6 +9,6 @@ class TestParameters:
 
     def test_copy(self):
         buses = MSDTransformer()
-        buses.fit(self.df, objectives=[2,4].objectives)
-        #buses.transform()
+        buses.fit(self.df, objectives=self.objectives)
+        a = buses.transform()
         #assert self.df.equals(buses.data_)
