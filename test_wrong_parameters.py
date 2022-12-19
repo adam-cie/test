@@ -10,5 +10,5 @@ class TestParameters:
     def test_copy(self):
         buses = MSDTransformer()
         buses.fit(self.df, objectives=self.objectives)
-        a = buses.transform()
+        buses.transform("a")
         #assert self.df.equals(buses.data_)
