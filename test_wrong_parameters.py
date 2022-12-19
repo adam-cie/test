@@ -11,4 +11,5 @@ class TestParameters:
         for i in ['c', 'g', 'min', 'max', 'gain', 'cost']:
             buses = MSDTransformer()
             buses.fit(self.df, objectives = i)
+            buses.transform()
             assert 1==1
