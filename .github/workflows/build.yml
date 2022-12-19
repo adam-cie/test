@@ -23,5 +23,6 @@ jobs:
         env:
           SOME_SECRET: ${{ secrets.SOME_SECRET }}
         run: |
+          pytest -q test_maciej.py
           pytest -q test_wrong_parameters.py
           pytest -q test_MSDTransformer_checkInput.py
