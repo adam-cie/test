@@ -23,4 +23,4 @@ jobs:
         env:
           SOME_SECRET: ${{ secrets.SOME_SECRET }}
         run: |
-          pytest -q tests.py
+          pytest -q test_wrong_parameters.py
