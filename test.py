@@ -20,7 +20,7 @@ objectives = ['max','max','min','max','min','min','min','max']
 #    pass
 
 #normal:
-buses = MSDTransformer(df, None, objectives, None, 'I')
+buses = MSDTransformer('I')
 
 #for testing objectives
 #buses = MSDTransformer(df, None, "objectives", None, 'I')
@@ -31,28 +31,13 @@ buses = MSDTransformer(df, None, objectives, None, 'I')
 #buses = MSDTransformer(df, None, objectives, [[0,1],[0,1],[0,1],[0,1],[0,1],[0,1],[0,1]], 'I')
 #buses = MSDTransformer(df, None, objectives, [['a',1],[0,1],[0,1],[0,1],[0,1],[0,1],[0,1],[0,1]], 'I')
 
-buses.fit()
+buses.fit(df, None, objectives, None)
 buses.transform()
 #assert (buses.ranked_alternatives == np.array(['b24', 'b26', 'b07', 'b16', 'b18', 'b25', 'b04', 'b01', 'b28', 'b09', 'b02', 'b13', 'b11', 'b32', 'b21', 'b12', 'b27', 'b17', 'b06', 'b29', 'b20', 'b14', 'b23', 'b19', 'b03', 'b30', 'b08', 'b22', 'b15', 'b10', 'b31', 'b05'])).all(), "wrong ranking for bus database"
 print(buses.ranked_alternatives)
 #print(buses.topsis_val)
 print(buses.data)
 
-x = np.array(buses.data['Mean'])
-y = np.array(buses.data['Std'])
-colors = np.array([buses.data['AggFn']])
-
-plt.scatter(x, y, c=colors, cmap='jet')
-for i, txt in enumerate(buses.ranked_alternatives):
-    plt.annotate(txt, (x[i],y[i]))
-plt.ylim(0, 0.5)
-plt.xlim(0, 1)
-plt.title("Visualizations of dataset in MSD-space")
-plt.xlabel("M: mean(u)")
-plt.ylabel("SD: std(u)")
-plt.colorbar(label="Aggregation value")
-plt.show()
-
-plot = buses.plot
+buses.plot()
 
 
